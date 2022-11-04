@@ -5,6 +5,7 @@ import {
   COLORSELECTED,
   COMPLETEDALL,
   DELETED,
+  LOADED,
   TOGGLED,
 } from "./actionTypes";
 const nextTodoId = (todos) => {
@@ -13,6 +14,8 @@ const nextTodoId = (todos) => {
 };
 const reducer = (state = initialState, action) => {
   switch (action.type) {
+    case LOADED:
+      return action.payload
     case ADDED:
       return [
         ...state,
